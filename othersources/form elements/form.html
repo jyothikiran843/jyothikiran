@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+    </head>
+    <body>
+            <form onsubmit="validate()">
+                <table>
+                    <h1>Form Validation Using Javascript</h1>
+                    <tr>
+                        <td><label for="first">First Name:</label></td>
+                        <td><input placeholder="Enter First Name" required onkeyup="firstname()" type="text" id="first"></td>
+                        <td><label class="errorlabels" id="firstnamelabel" hidden>Invalid First Name</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="last">Last Name:</label></td>
+                        <td><input required placeholder="Enter Last Name" onkeyup="lastname()" type="text" id="last"></td>
+                        <td><label class="errorlabels" id="lastnamelabel" hidden>Invalid Last Name</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="middle">Middle Name:</label></td>
+                        <td><input placeholder="Enter Middle Name" type="text" id="middle"></td>
+                    </tr>
+                    <tr>
+                        <td> <label for="full">Full Name:</label></td>
+                        <td><input placeholder="Your Fullname Here" type="text" id="full" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><label for="count">Country:</label></td>
+                        <td>
+                            <fieldset onchange="whatcountry()" id="country">
+                                <legend>Country</legend>
+                            <p>India</p><input name="country" type="radio" id="country-india" value="india">
+                            <p>USA</p><input name="country" type="radio" id="country-usa" value="usa"></fieldset>
+                        </td>
+                        <td><label class="errorlabels" id="countrylabel" hidden>Invalid Selection</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="mobile">Mobile No. :</label></td>
+                        <td><input id="mobile" placeholder="Enter Mobile No." required onkeyup="ismobile()" type="text"></td>
+                        <td><label class="errorlabels" id="mobilelabel" hidden>Invalid Mobile Number</label></td>
+
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input required placeholder="Enter Password" onkeyup="ispassword()" id="password" type="password"><img onmousedown="show()" src="view.png" id="show-password" height="20px" width="20px"></td>
+                        <td><label class="errorlabels" id="passwordlabel" hidden>Invalid Password</label></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="ail">Email:</label>
+                        <td><input required placeholder="Enter Email" onkeyup="emailValidate()" id="ail" type="email" class="in"></td>
+                        <td><label class="errorlabels" id="emaillabel" hidden>Invalid Email</label></td>
+
+                    </tr>
+                    <tr>
+                        <td><label for="gender">Gender:</label></td>
+                        <td>
+                            <fieldset onchange="gend()" id="gender">
+                                <legend>Gender</legend>
+                                <input id="gender-male" type="radio" name="gender" value="male"><label>Male</label>
+                                <input id="gender-female" type="radio" name="gender" value="female"><label>Female</label>
+                                <input id="gender-other" type="radio" name="gender" value="other"><label>Other</label>
+                            </fieldset>
+                        </td>
+                        <td><label class="errorlabels" id="genderlabel" hidden>Invalid Selection of Gender</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="year" id="year-label">Year:</label></td>
+                        <td><select  onmouseenter="isyear()" id="year">
+                                <option>None</option>
+                                <option>P1</option>
+                                <option>P2</option>
+                                <option>E1</option>
+                                <option>E2</option>
+                                <option>E3</option>
+                                <option>E4</option>
+                            </select></td>
+                        <td><label class="errorlabels" id="yearlabel" hidden>Invalid Year Selected</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="branch" id="branch-labe;">Branch</label></td>
+                        <td><select onmouseleave="isbranch()" onmouseenter="isbranch()" id="branch">
+                                <option>None</option>
+                                <option>PUC</option>
+                                <option>CSE</option>
+                                <option>ECE</option>
+                                <option>Mech</option>
+                                <option>Civil</option>
+                                <option>MME</option>
+                                <option>Chem</option>
+                            </select></td>
+                        <td><label class="errorlabels" id="branchlabel"  hidden>Invalid Branch</label></td>
+                    </tr>
+                    <tr>
+                        <td><label  for="hobbies">Hobbies:</label></td>
+                        <td><label onmousemove="ishobbies()"  class="hobbs" >Games</label><input onchange="ishobbies()" class="hobbies" type="checkbox" value="games"> </td></tr>
+                            <tr><td></td><td><label class="hobbs">More Games</label><input onchange="ishobbies()"  class="hobbies" type="checkbox" value="more-games"></td><td rowspan="4"><label id="hobbieslabel" class="errorlabels">Select Atleast 2 from the given set of hobbies for successfull submission</label></td></tr>
+                            <tr><td></td><td><label class="hobbs">Multiplayer</label><input onchange="ishobbies()"  class="hobbies" type="checkbox" value="muliplayer-games"></td></tr>
+                            <tr><td></td><td><label class="hobbs">Strategic games</label><input onchange="ishobbies()"  class="hobbies" type="checkbox" value="strategic-games"></td></tr>
+                            <tr><td></td><td><label  class="hobbs">Action</label><input onchange="ishobbies()" class="hobbies" type="checkbox" value="action-games"></td></tr>
+                
+                    <tr>
+                        <td><label for="file">Attach File:</label></td>
+                        <td><input required size="" onchange="fileValid(this)" id="file" type="file"></td>
+                        <td><label hidden>Invalid First Name</label></td>
+
+                    </tr>
+                    <tr>
+                        <td><label for="bday">Birth day:</label></td>
+                        <td>
+                            <input onmouseleave="ageis()" onmouseenter="ageis()" required id="bday" type="date">
+                            <label id="aged" hidden></label>
+                        </td>
+                    <td><label class="errorlabels" id="datelabel" hidden>Invalid Date</label></td>
+
+                        
+                    <tr>
+                    <tr>
+                        <td><label for="address">Address:</label></td>
+                        <td><textarea placeholder="Enter Address" required onkeyup="changeaddress()" id="address" rows="2" cols="10"></textarea></td>
+                        <td><label class="errorlabels" id="addresslabel" hidden>Invalid Address</label></td>
+
+                    </tr>
+                    <tr><td colspan="2"><label for="tandc">
+                        <input required type="checkbox" id="tandc">agree to terms <small>&</small>conditions</label></td></tr>
+
+                    <!-- <input type="submit" onclick="validate()"> -->
+                    <tr>
+                        <td><button class="butts" onclick="validate()" type="button">Butt</button>
+                            <input class="butts" onclick="alertcheyyu()" type="reset"></td>
+                        <td>
+                            <input type="submit" id="subbutton" class="butts">
+                            <!-- <button class="butts" onclick="changePicture()" type="button">Backs</button> -->
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        <script src="js.js"></script>
+    </body>
+</html>

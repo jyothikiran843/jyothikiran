@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            div{
+                margin-top: 100px;
+            }
+            .butts{
+                height: 50px;
+                width: 200px;
+                margin-left: 100px;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 1.2rem;
+                border: 0px solid;
+                background-color: turquoise;
+                cursor: pointer;
+            }
+            #buttons-div{
+                height: 540px;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="buttons-div">
+            <button class="butts" id="register">Register</button>
+            <button class="butts" id="login">Log in</button>
+        </div>
+        <script>
+            document.getElementsByClassName('butts')[0].addEventListener("click",clicked)
+            document.getElementsByClassName('butts')[1].addEventListener('click',clicked1)
+            function clicked(){
+                document.body.innerHTML="<object type='text/html' height=540px width=100% data='othersources/form elements/form.html'></object>"
+            }
+            function clicked1(){
+                document.body.innerHTML="<object type='text/html' height=540px width=100% data='othersources/form elements/login.html'></object>"
+            }
+        </script>
+    </body>
+</html>
