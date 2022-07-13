@@ -67,6 +67,8 @@ ul{
     z-index: -9;
     position: fixed;
     top: 100px;
+    border-bottom: 2px solid;
+    box-shadow: 0px 2px 2px 1px rgb(136, 132, 132);
     height: 50px;
     /* background-color:blanchedalmond; */
     width: 96%;
@@ -199,7 +201,7 @@ img{
 }
 #table-of-contents ul li,#right-corner-div li{
     padding-top: 20px;
-    color: crimson;
+    color: mediumslateblue;
 }
 ::placeholder{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -221,7 +223,8 @@ html{
     top: 45px;
     width: 70px;
     right: 320px;
-    /* background-color: turquoise; */
+    background-color: powderblue;
+    border-radius: 10px;
 }
 #horizontal-nav li:nth-child(3) ul li:first-child .lv3{
     position: absolute;
@@ -252,7 +255,7 @@ html{
 #header ul li ul li ul{
     display: block;
     position: absolute;
-    /* background-color: black; */
+    background-color: powderblue;
     /* top: 50px; */
     margin-right: 80px;
     font-size: 1.1rem;
@@ -263,9 +266,9 @@ html{
     height: 30px;
     text-align: center;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: steelblue;
 }
-#counter{
+#footer-image{
     position: absolute;
     bottom: -5px;
     right: 20px;
