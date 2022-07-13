@@ -9,9 +9,9 @@
                 height: 520px;
             }
             img{
-                animation-name: slide;
+                /* animation-name: slide;
                 animation-duration: 3s;
-                animation-iteration-count: infinite;
+                animation-iteration-count: infinite; */
                 height: 100%;
                 width: 100%;
             }
@@ -58,12 +58,14 @@
             element.addEventListener('change',imageSelected)
         })
         function imageSelected(){
-            i=rads.forEach(item =>{
+            rads.forEach(item =>{
                 if(item.checked){
+                    i=item.value
+                    console.log(item.value)
+                    slider()
                     return item.value
                 }
             })
-            slider()
         }
         function slider(){
             if(i<5){
@@ -73,8 +75,10 @@
                 i=0;
             }
             i++;
-            setTimeout(slider,3000)
+            // setTimeout(slider,3000)
         }
-        slider()
+        function fadeout(){
+            document.getElementsByTagName('img')[0].animate({opacity:0.5},2000)
+        }
     </script>
 </html>
